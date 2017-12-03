@@ -8,9 +8,23 @@
 	</li>
 </ul> -->
 
-<nav>
+<nav class="navbar navbar-inverse">
 	<a routerLink="/" routerLinkActive="active"> Home </a>
 	<a routerLink = "/about" routerLinkActive = "active"> About </a>
 </nav>
+
+<div class="row">
+	<div class="col-sm-6 col-xs-6 bg-success ">
+		 
+		<p>
+			This is the 1st 6 grids.
+		</p>
+	</div>
+	<div class="col-sm-6  col-xs-6 bg-danger ">
+		<p>
+			This is the 2nd 6 grids.
+		</p>
+	</div>
+</div>
 
 <router-outlet></router-outlet>
