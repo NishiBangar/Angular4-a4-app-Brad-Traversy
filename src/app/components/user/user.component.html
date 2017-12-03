@@ -1,0 +1,70 @@
+<h2>{{name}}</h2>
+<ul>
+	<li>Age : {{age}}</li>
+	<li>Email : {{email}}</li>
+	<li>{{address.street}} {{address.city}} {{address.state}}</li>
+</ul>
+	
+<button (click) = "onClick();">
+	Click Me
+</button>
+
+<button (click) = "toggleEdit();">
+	Edit Uesr
+</button>
+
+<div *ngIf = "isEdit">
+	<h2>Edit User</h2>
+	<form >
+		<div>
+			<label>Name</label>
+			<input type="text" [(ngModel)] = "name" name="name">
+		</div>
+		<div>
+			<label>Age</label>
+			<input type="text" [(ngModel)] = "age" name="age">
+		</div>
+		<div>
+			<label>Email</label>
+			<input type="text" [(ngModel)] = "email" name="email">
+		</div>
+		<div>
+			<label>Street</label>
+			<input type="text" [(ngModel)] = "address.street" name="street">
+		</div>
+		<div>
+			<label>City</label>
+			<input type="text" [(ngModel)] = "address.city" name="city">
+		</div>
+		<div>
+			<label>State</label>
+			<input type="text" [(ngModel)] = "address.state" name="state">
+		</div>
+	</form>
+</div>
+
+<h2>Hobbies</h2>
+
+<form (submit) = "addHobby(hobby.value)">
+	<div>
+		<label for = "hobby">Hobby</label>
+		<input type="text" #hobby>
+	</div>
+</form>
+
+<ul>
+	<li *ngFor = "let hobby of hobbies; let i = index">
+		{{i +1}} {{hobby}} 
+
+		<button (click) = "deleteHobby(hobby)">X
+		</button>
+	</li>
+</ul>
+
+
+<div *ngFor = "let post of posts">
+	<h3>{{post.title}}</h3>
+	<br>
+	<p>{{post.body}} </p>
+
+</div>
